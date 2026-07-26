@@ -1,0 +1,28 @@
+.DS_Store
+node_modules/
+
+# Regenerated on every build — 8 MB that changes daily. Committing it would add
+# gigabytes of history a year for data the YouTube API hands back for free.
+pipeline/dist/catalog.json
+pipeline/dist/unparsed.json
+pipeline/dist/last-sync.json
+pipeline/dist/comparison.json
+
+# Rebuilt by `npm run quran` from public sources.
+pipeline/dist/quran.sqlite
+
+# Generated output.
+pipeline/site/
+
+# Secrets.
+.env
+*.env
+
+# Claude Code local overrides — per-machine, not shared.
+.claude/settings.local.json
+
+# Scratch. `_to_delete/` is a staging area for files on their way out; the
+# tarball is a local backup of pipeline/cache/, which is committed properly.
+_to_delete/
+haramain-data.tar.gz
+

@@ -1,0 +1,33 @@
+{
+  "name": "haramain-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Builds and publishes the index of what was recited in every prayer at the Two Holy Mosques.",
+  "scripts": {
+    "_comment": "--env-file-if-exists loads pipeline/.env locally. The -if-exists variant matters: in CI there is no .env, the keys arrive as real environment variables, and plain --env-file would abort on the missing file. Values already in the environment win over the file, so CI is unaffected.",
+    "catalog": "tsx --env-file-if-exists=.env src/cli.ts catalog",
+    "quran": "tsx --env-file-if-exists=.env src/cli.ts quran",
+    "transcribe": "tsx --env-file-if-exists=.env src/cli.ts transcribe",
+    "align": "tsx --env-file-if-exists=.env src/cli.ts align",
+    "sync": "tsx --env-file-if-exists=.env src/cli.ts sync",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "import": "tsx --env-file-if-exists=.env src/cli.ts import",
+    "estimate": "tsx --env-file-if-exists=.env src/cli.ts estimate",
+    "site": "tsx --env-file-if-exists=.env src/cli.ts site",
+    "compare": "tsx --env-file-if-exists=.env src/cli.ts compare"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "better-sqlite3": "^11.10.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.0"
+  }
+}

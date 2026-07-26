@@ -1,0 +1,53 @@
+# The aligner is the whole product: everything downstream trusts the verse it
+# picks. These tests assert against raw Gemini output from a validated recording,
+# so a regression shows up as a wrong verse, not a vague diff.
+
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  typescript:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+      - run: npm ci
+
+      # `align.test.ts` needs dist/quran.sqlite, which is gitignored because it
+      # is rebuilt from public sources. Without this step the file fails at
+      # collection — `SqliteError: unable to open database file` — and the 22
+      # aligner tests never run. The suite guards individual cases with
+      # `hasDb ? describe : describe.skip`, so a partial database would skip
+      # rather than fail; the check below catches that quieter case.
+      - name: Restore the Qur'an database
+        id: quran-cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline/dist/quran.sqlite
+          key: quran-sqlite-v1
+      - name: Build the Qur'an database
+        if: steps.quran-cache.outputs.cache-hit != 'true'
+        run: npm run quran
+
+      - name: Refuse to run a suite that would skip itself
+        run: |
+          test -f dist/quran.sqlite || {
+            echo "::error::dist/quran.sqlite missing — the aligner suite would skip and CI would pass on nothing"
+            exit 1
+          }
+
+      - run: npm run typecheck
+      - run: npm test
+

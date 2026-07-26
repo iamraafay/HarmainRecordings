@@ -1,0 +1,6 @@
+node_modules/
+.env
+
+# NOT ignored, deliberately — see the note in the repository README:
+#   cache/            the Gemini transcripts. The expensive half.
+#   dist/timelines/   the aligned verse timelines.

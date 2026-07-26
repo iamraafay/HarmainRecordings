@@ -1,0 +1,110 @@
+# Keeps the published index current.
+#
+# Runs once a day: catalogue new uploads, transcribe and align anything that
+# does not already have a timeline, regenerate the site, and deploy it.
+#
+# Two properties of this workflow are load-bearing and should not be "tidied":
+#
+#   --limit is a cost ceiling, not a convenience. Transcription is the only
+#   step that spends money. Without a ceiling, a bug in the date filter could
+#   put thousands of videos through Gemini before anyone noticed. 20 leaves
+#   comfortable headroom over the ~12 analysable uploads a normal day brings,
+#   and caps the damage of a bad run at a few dollars.
+#
+#   The transcripts are committed back. `pipeline/cache/` is the expensive half
+#   of the pipeline; alignment re-derives from it for free. If the cache is not
+#   persisted, every run pays again for audio that was already transcribed.
+#
+# --days 3 rather than 1 is deliberate: a skipped or failed run self-heals on
+# the next one, and re-examining a day that is already done costs nothing
+# because sync skips any video that already has a timeline.
+
+name: Sync and publish
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to consider"
+        required: false
+        default: "3"
+      limit:
+        description: "Cost ceiling — maximum videos to transcribe this run"
+        required: false
+        default: "20"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never run two syncs at once — they would transcribe the same videos twice.
+# Do not cancel a run in progress: it may be mid-transcription, and a cancelled
+# transcript is money spent for nothing.
+concurrency:
+  group: haramain-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+
+      - run: npm ci
+
+      # Rebuilt from public sources and identical between runs — fetching it
+      # daily is wasted bandwidth.
+      - name: Restore the Qur'an database
+        uses: actions/cache@v4
+        with:
+          path: pipeline/dist/quran.sqlite
+          key: quran-sqlite-v1
+
+      - name: Catalogue, transcribe, align
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run sync -- --days ${{ inputs.days || '3' }} --limit ${{ inputs.limit || '20' }}
+
+      # The transcripts are what cost money. Persist them before anything else
+      # can fail.
+      - name: Commit new transcripts and timelines
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cache dist/timelines
+          if git diff --staged --quiet; then
+            echo "nothing new"
+          else
+            git commit -m "Sync: $(git diff --staged --name-only | grep -c 'transcript.json' || true) new transcripts"
+            git push
+          fi
+
+      - name: Build the site
+        run: npm run site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: pipeline/site
+
+  deploy:
+    needs: sync
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
