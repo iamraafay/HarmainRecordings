@@ -2,7 +2,7 @@
 
 **What was recited at Masjid al-Haram and Masjid an-Nabawi — searchable by day, by surah, and by imam.**
 
-The [Haramain Recordings](https://www.youtube.com/@Haramain_Recordings) channel publishes every prayer from both mosques, every day — around twenty videos daily, twenty thousand in the archive. The titles say who led and when. Nothing says what was recited.
+The [Haramain Recordings](https://www.youtube.com/@Haramain_Recordings) channel publishes every prayer from both mosques, every day — around twenty videos daily, and 37,482 in the archive. The titles say who led and when. Nothing says what was recited.
 
 This fills that gap. Gemini transcribes the Arabic it hears with timestamps; a deterministic aligner matches that transcript to the mushaf. The output is a static site where every verse links to the exact second on YouTube.
 
@@ -55,7 +55,8 @@ npm install
 cp .env.example .env            # add your two keys
 
 npm run quran                   # build the Quran database
-npm run catalog                 # index the channel — 20,000 videos
+npm run catalog                 # index the channel — 20,000 videos (YouTube caps
+                                #   playlist paging there; see CLAUDE.md)
 npm run estimate 7              # what a week would cost, per model
 npm run sync -- --days 7        # transcribe and align
 npm run site                    # generate the site
