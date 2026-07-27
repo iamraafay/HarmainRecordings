@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseTitle } from "../src/titleParser.js";
+import { parseTitle, reconcileDateWithUpload } from "../src/titleParser.js";
 import { parseIsoDuration, parseRssFeed } from "../src/catalog.js";
 import { parseTimestamp, planWindows, anchorToAbsolute, dedupeOverlap } from "../src/transcribe.js";
 
@@ -153,5 +153,64 @@ describe("transcription helpers", () => {
       { t0: 20, t1: 30, arabic: "رب العالمين" },
     ]);
     expect(deduped).toHaveLength(2);
+  });
+});
+
+describe("reconcileDateWithUpload — a prayer cannot be uploaded before it happens", () => {
+  const on = (titleDate: string | null, uploadedAt: string) =>
+    reconcileDateWithUpload(titleDate, `${uploadedAt}T12:00:00Z`);
+
+  // Both of these are real. The channel typed the wrong year, the parser
+  // believed it, and they sorted above every genuine day on the site.
+  it("rejects a year typo a decade in the future", () => {
+    // "3rd Jul 2035 Madeenah 'Asr Sheikh Budayr", uploaded 2025-07-03
+    expect(on("2035-07-03", "2025-07-03")).toEqual({ date: "2025-07-03", corrected: true });
+  });
+
+  it("rejects a year typo four years out", () => {
+    // "9th May 2029 Madeenah Jumu'ah Adhaan …", uploaded 2025-05-09.
+    // 9 May 2025 was a Friday, which is when Jumu'ah is prayed; 2029 is not.
+    expect(on("2029-05-09", "2025-05-09")).toEqual({ date: "2025-05-09", corrected: true });
+  });
+
+  it("rejects a month typo", () => {
+    // "7th Feb 2024 Makkah 'Isha Sheikh Baleelah", uploaded 2024-01-07.
+    // Only a month out, but still a month in the future at upload time.
+    expect(on("2024-02-07", "2024-01-07")).toEqual({ date: "2024-01-07", corrected: true });
+  });
+
+  it("keeps the ordinary case where title and upload agree", () => {
+    expect(on("2026-07-25", "2026-07-25")).toEqual({ date: "2026-07-25", corrected: false });
+  });
+
+  // 212 videos in the catalogue are uploaded the day after the prayer, and 8
+  // more up to five days later. A symmetric window would break all of them.
+  it("keeps a video uploaded the next day", () => {
+    expect(on("2026-07-25", "2026-07-26")).toEqual({ date: "2026-07-25", corrected: false });
+  });
+
+  it("keeps a genuinely late upload five days on", () => {
+    // "16th Feb 2024 Madeenah 'Isha Sheikh Thubaity", uploaded 2024-02-21.
+    expect(on("2024-02-16", "2024-02-21")).toEqual({ date: "2024-02-16", corrected: false });
+  });
+
+  it("allows one day of slack for a post-midnight Tahajjud", () => {
+    // Makkah is UTC+3, so a prayer after midnight local can carry a date a day
+    // ahead of the UTC timestamp YouTube stamps on the upload.
+    expect(on("2026-03-15", "2026-03-14")).toEqual({ date: "2026-03-15", corrected: false });
+  });
+
+  it("does not extend that slack to two days", () => {
+    expect(on("2026-03-16", "2026-03-14")).toEqual({ date: "2026-03-14", corrected: true });
+  });
+
+  it("leaves an undated title alone", () => {
+    expect(on(null, "2026-07-25")).toEqual({ date: null, corrected: false });
+  });
+
+  it("cannot catch a typo landing in the past, and says so honestly", () => {
+    // "3rd Jul 2015" on a 2025 upload is equally wrong, but indistinguishable
+    // from an archival re-upload. Documented as a known gap, not a passing case.
+    expect(on("2015-07-03", "2025-07-03")).toEqual({ date: "2015-07-03", corrected: false });
   });
 });

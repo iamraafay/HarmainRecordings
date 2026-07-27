@@ -11,7 +11,7 @@
  *     have a key.
  */
 
-import { parseTitle } from "./titleParser.js";
+import { parseTitle, reconcileDateWithUpload } from "./titleParser.js";
 import { MIN_TITLE_CONFIDENCE, type Catalog, type CatalogEntry } from "./types.js";
 
 export const CHANNEL_ID = "UC37tvO47bp_cKH1f4_VQCOA";
@@ -164,13 +164,29 @@ export async function buildCatalog(
     source = "rss";
   }
 
-  const entries: CatalogEntry[] = raw.map((v) => ({
-    videoId: v.videoId,
-    title: v.title,
-    publishedAt: v.publishedAt,
-    durationSeconds: v.durationSeconds,
-    ...parseTitle(v.title),
-  }));
+  const entries: CatalogEntry[] = raw.map((v) => {
+    const parsed = parseTitle(v.title);
+    // The title is the only source of the date, and it is hand-typed. Check it
+    // against the upload timestamp before trusting it.
+    const { date, corrected } = reconcileDateWithUpload(parsed.date, v.publishedAt);
+    return {
+      videoId: v.videoId,
+      title: v.title,
+      publishedAt: v.publishedAt,
+      durationSeconds: v.durationSeconds,
+      ...parsed,
+      date,
+      ...(corrected ? { dateCorrected: true } : {}),
+    };
+  });
+
+  const corrected = entries.filter((e) => e.dateCorrected);
+  if (corrected.length > 0) {
+    log(`${corrected.length} title date(s) were ahead of the upload and overridden:`);
+    for (const e of corrected.slice(0, 10)) {
+      log(`  ${e.publishedAt.slice(0, 10)} <- ${e.title}`);
+    }
+  }
 
   entries.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 

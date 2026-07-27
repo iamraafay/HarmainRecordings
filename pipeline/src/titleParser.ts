@@ -134,8 +134,77 @@ function findDate(tokens: string[]): DateHit | null {
 }
 
 /**
+ * How far a title's date may run *ahead* of the upload date before we stop
+ * believing it.
+ *
+ * Zero would be defensible — across 17,368 dated titles not one legitimate
+ * entry is dated after its own upload. One day of slack is kept for the
+ * genuinely awkward case: a Tahajjud recorded after midnight Makkah time
+ * (UTC+3) can carry a local date that is a day ahead of the UTC timestamp
+ * YouTube stamps on it.
+ */
+export const UPLOAD_SLACK_DAYS = 1;
+
+const DAY_MS = 86_400_000;
+
+/**
+ * Cross-checks a title's date against the date YouTube says the video was
+ * uploaded, and rejects the title when it claims a date it cannot have.
+ *
+ * The channel titles carry the date, and the parser believes them — which is
+ * right until someone types the wrong year. Two live examples:
+ *
+ *     "3rd Jul 2035 Madeenah 'Asr Sheikh Budayr"        uploaded 2025-07-03
+ *     "9th May 2029 Madeenah Jumu'ah Adhaan …"          uploaded 2025-05-09
+ *
+ * Neither is malformed, so neither reached `unparsed.json`; both parsed with
+ * full confidence and sorted to the top of every by-date view, pushing real
+ * days off the front page.
+ *
+ * The test is not a tuned tolerance, it is a fact about recordings: **a prayer
+ * cannot be uploaded before it is prayed.** So a title dated *after* its own
+ * upload is impossible and the upload date wins. The reverse — a title dated
+ * before its upload — is an ordinary late upload and is left alone. Measured
+ * across the catalogue: 212 videos uploaded the next day, 8 uploaded up to five
+ * days later, and every single entry dated ahead of its upload was a typo.
+ *
+ * Deliberately asymmetric. A symmetric window would either reject those late
+ * uploads or fail to catch "7th Feb 2024" on a video uploaded 7 Jan 2024.
+ *
+ * Note this cannot catch a typo that lands in the *past* — a title reading 2015
+ * instead of 2025 is equally wrong and entirely plausible to the check. Those
+ * are invisible today; nothing in the data distinguishes them from an archival
+ * re-upload.
+ */
+export function reconcileDateWithUpload(
+  titleDate: string | null,
+  publishedAt: string,
+  slackDays = UPLOAD_SLACK_DAYS,
+): { date: string | null; corrected: boolean } {
+  const uploadDate = publishedAt.slice(0, 10);
+  if (!titleDate || !/^\d{4}-\d{2}-\d{2}$/.test(uploadDate)) {
+    return { date: titleDate, corrected: false };
+  }
+
+  const titleMs = Date.parse(`${titleDate}T00:00:00Z`);
+  const uploadMs = Date.parse(`${uploadDate}T00:00:00Z`);
+  if (!Number.isFinite(titleMs) || !Number.isFinite(uploadMs)) {
+    return { date: titleDate, corrected: false };
+  }
+
+  const daysAhead = (titleMs - uploadMs) / DAY_MS;
+  if (daysAhead <= slackDays) return { date: titleDate, corrected: false };
+
+  return { date: uploadDate, corrected: true };
+}
+
+/**
  * Parses one raw title. Never throws: an unrecognisable title comes back with
  * null fields, confidence 0 and every token in `leftovers`.
+ *
+ * The date here is whatever the title claims. It is only as good as the person
+ * who typed it — see `reconcileDateWithUpload`, which the catalogue applies
+ * once the upload timestamp is known.
  */
 export function parseTitle(rawTitle: string): ParsedTitle {
   const title = rawTitle.replace(/[‘’ʻʼ`]/g, "'").replace(/\s+/g, " ").trim();

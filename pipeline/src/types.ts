@@ -44,6 +44,11 @@ export interface CatalogEntry extends ParsedTitle {
   durationSeconds: number | null;
   /** True once a timeline JSON exists for this video. */
   analyzed?: boolean;
+  /**
+   * Set when the title claimed a date after its own upload — impossible — and
+   * the upload date was used instead. See `reconcileDateWithUpload`.
+   */
+  dateCorrected?: boolean;
 }
 
 export interface Catalog {
