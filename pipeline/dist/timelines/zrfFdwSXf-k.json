@@ -1,0 +1,30 @@
+{
+  "videoId": "zrfFdwSXf-k",
+  "generatedAt": "2026-08-01T06:09:04.982Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 0.667,
+  "segments": [
+    {
+      "t0": 65,
+      "t1": 74,
+      "surah": 2,
+      "ayah": 281,
+      "conf": 1
+    },
+    {
+      "t0": 127,
+      "t1": 132,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.437
+    },
+    {
+      "t0": 270,
+      "t1": 274,
+      "surah": 9,
+      "ayah": 119,
+      "conf": 0.802
+    }
+  ]
+}
