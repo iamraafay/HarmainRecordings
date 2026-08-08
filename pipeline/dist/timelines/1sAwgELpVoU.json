@@ -1,0 +1,79 @@
+{
+  "videoId": "1sAwgELpVoU",
+  "generatedAt": "2026-08-08T04:20:44.120Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 0.6,
+  "segments": [
+    {
+      "t0": 59,
+      "t1": 64.478,
+      "surah": 33,
+      "ayah": 70,
+      "conf": 0.688
+    },
+    {
+      "t0": 64.478,
+      "t1": 73,
+      "surah": 33,
+      "ayah": 71,
+      "conf": 1
+    },
+    {
+      "t0": 87,
+      "t1": 89,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.44
+    },
+    {
+      "t0": 365,
+      "t1": 368,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.262
+    },
+    {
+      "t0": 496,
+      "t1": 509.867,
+      "surah": 4,
+      "ayah": 114,
+      "conf": 0.914
+    },
+    {
+      "t0": 509.8666666666667,
+      "t1": 512,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.383
+    },
+    {
+      "t0": 613,
+      "t1": 622,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.506
+    },
+    {
+      "t0": 641,
+      "t1": 648,
+      "surah": 8,
+      "ayah": 62,
+      "conf": 1
+    },
+    {
+      "t0": 648,
+      "t1": 660,
+      "surah": 8,
+      "ayah": 63,
+      "conf": 1
+    },
+    {
+      "t0": 692,
+      "t1": 699,
+      "surah": 33,
+      "ayah": 56,
+      "conf": 0.874
+    }
+  ]
+}

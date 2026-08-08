@@ -1,0 +1,272 @@
+{
+  "videoId": "7neTX-HvvQk",
+  "generatedAt": "2026-08-08T04:20:12.088Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 0.811,
+  "segments": [
+    {
+      "t0": 101,
+      "t1": 104,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 105,
+      "t1": 108,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 109,
+      "t1": 112,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 113,
+      "t1": 118,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 120,
+      "t1": 124,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 125,
+      "t1": 138,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 1
+    },
+    {
+      "t0": 146,
+      "t1": 159,
+      "surah": 4,
+      "ayah": 71,
+      "conf": 0.839
+    },
+    {
+      "t0": 161,
+      "t1": 180,
+      "surah": 4,
+      "ayah": 72,
+      "conf": 1
+    },
+    {
+      "t0": 182,
+      "t1": 205,
+      "surah": 4,
+      "ayah": 73,
+      "conf": 1
+    },
+    {
+      "t0": 206,
+      "t1": 228,
+      "surah": 4,
+      "ayah": 74,
+      "conf": 1
+    },
+    {
+      "t0": 229,
+      "t1": 268,
+      "surah": 4,
+      "ayah": 75,
+      "conf": 1
+    },
+    {
+      "t0": 269,
+      "t1": 297,
+      "surah": 4,
+      "ayah": 76,
+      "conf": 1
+    },
+    {
+      "t0": 298,
+      "t1": 344,
+      "surah": 4,
+      "ayah": 77,
+      "conf": 0.893
+    },
+    {
+      "t0": 345,
+      "t1": 358,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.443
+    },
+    {
+      "t0": 359,
+      "t1": 407,
+      "surah": 4,
+      "ayah": 78,
+      "conf": 1
+    },
+    {
+      "t0": 408,
+      "t1": 436,
+      "surah": 4,
+      "ayah": 79,
+      "conf": 1
+    },
+    {
+      "t0": 536,
+      "t1": 540,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 541,
+      "t1": 544,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 545,
+      "t1": 548,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 549,
+      "t1": 553,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 554,
+      "t1": 558,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 559,
+      "t1": 572,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 1
+    },
+    {
+      "t0": 580,
+      "t1": 596,
+      "surah": 4,
+      "ayah": 80,
+      "conf": 1
+    },
+    {
+      "t0": 597,
+      "t1": 612,
+      "surah": 4,
+      "ayah": 81,
+      "conf": 0.72,
+      "partial": true
+    },
+    {
+      "t0": 613,
+      "t1": 628,
+      "surah": 4,
+      "ayah": 81,
+      "conf": 0.66,
+      "partial": true
+    },
+    {
+      "t0": 629,
+      "t1": 645,
+      "surah": 4,
+      "ayah": 82,
+      "conf": 1
+    },
+    {
+      "t0": 646,
+      "t1": 670,
+      "surah": 4,
+      "ayah": 83,
+      "conf": 0.88
+    },
+    {
+      "t0": 671,
+      "t1": 681,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.556
+    },
+    {
+      "t0": 682,
+      "t1": 700,
+      "surah": 4,
+      "ayah": 84,
+      "conf": 0.938
+    },
+    {
+      "t0": 700,
+      "t1": 708,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.442
+    },
+    {
+      "t0": 709,
+      "t1": 719,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.611
+    },
+    {
+      "t0": 720,
+      "t1": 729,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.611
+    },
+    {
+      "t0": 730,
+      "t1": 736,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.538
+    },
+    {
+      "t0": 737,
+      "t1": 748,
+      "surah": 4,
+      "ayah": 86,
+      "conf": 0.675,
+      "partial": true
+    },
+    {
+      "t0": 749,
+      "t1": 755,
+      "surah": 4,
+      "ayah": 86,
+      "conf": 0.633,
+      "partial": true
+    },
+    {
+      "t0": 756,
+      "t1": 773,
+      "surah": 4,
+      "ayah": 87,
+      "conf": 0.885
+    },
+    {
+      "t0": 774,
+      "t1": 780,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.495
+    }
+  ]
+}

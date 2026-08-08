@@ -1,0 +1,135 @@
+{
+  "videoId": "PVRrVRZBysc",
+  "generatedAt": "2026-08-08T04:19:13.663Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 1,
+  "segments": [
+    {
+      "t0": 60,
+      "t1": 64,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 64,
+      "t1": 68,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 68,
+      "t1": 71,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 72,
+      "t1": 76,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 76,
+      "t1": 85,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 85,
+      "t1": 102,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 1
+    },
+    {
+      "t0": 107,
+      "t1": 130,
+      "surah": 4,
+      "ayah": 57,
+      "conf": 1
+    },
+    {
+      "t0": 131,
+      "t1": 161,
+      "surah": 4,
+      "ayah": 58,
+      "conf": 1
+    },
+    {
+      "t0": 161,
+      "t1": 195,
+      "surah": 4,
+      "ayah": 59,
+      "conf": 1
+    },
+    {
+      "t0": 269,
+      "t1": 273,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 274,
+      "t1": 278,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 278,
+      "t1": 281,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 282,
+      "t1": 286,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 287,
+      "t1": 291,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 292,
+      "t1": 308,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 1
+    },
+    {
+      "t0": 313,
+      "t1": 339,
+      "surah": 4,
+      "ayah": 69,
+      "conf": 0.944
+    },
+    {
+      "t0": 339,
+      "t1": 348,
+      "surah": 4,
+      "ayah": 70,
+      "conf": 1
+    },
+    {
+      "t0": 348,
+      "t1": 362,
+      "surah": 4,
+      "ayah": 71,
+      "conf": 0.959
+    }
+  ]
+}
