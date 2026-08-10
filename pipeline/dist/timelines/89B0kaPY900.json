@@ -1,0 +1,217 @@
+{
+  "videoId": "89B0kaPY900",
+  "generatedAt": "2026-08-10T04:48:44.123Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 0.931,
+  "segments": [
+    {
+      "t0": 74,
+      "t1": 79,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 79,
+      "t1": 83,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 83,
+      "t1": 89,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 89,
+      "t1": 96,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 96,
+      "t1": 99.857,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 0.933
+    },
+    {
+      "t0": 99.857,
+      "t1": 119,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 0.704,
+      "partial": true
+    },
+    {
+      "t0": 126,
+      "t1": 134,
+      "surah": 25,
+      "ayah": 63,
+      "conf": 0.667,
+      "partial": true
+    },
+    {
+      "t0": 134,
+      "t1": 141,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.593
+    },
+    {
+      "t0": 141,
+      "t1": 150,
+      "surah": 25,
+      "ayah": 64,
+      "conf": 1
+    },
+    {
+      "t0": 150,
+      "t1": 160,
+      "surah": 25,
+      "ayah": 65,
+      "conf": 1
+    },
+    {
+      "t0": 160,
+      "t1": 174,
+      "surah": 25,
+      "ayah": 66,
+      "conf": 1
+    },
+    {
+      "t0": 174,
+      "t1": 187,
+      "surah": 25,
+      "ayah": 67,
+      "conf": 1
+    },
+    {
+      "t0": 187,
+      "t1": 216,
+      "surah": 25,
+      "ayah": 68,
+      "conf": 0.805,
+      "partial": true
+    },
+    {
+      "t0": 216,
+      "t1": 226,
+      "surah": 25,
+      "ayah": 69,
+      "conf": 1
+    },
+    {
+      "t0": 226,
+      "t1": 253,
+      "surah": 25,
+      "ayah": 70,
+      "conf": 0.793,
+      "partial": true
+    },
+    {
+      "t0": 253,
+      "t1": 267,
+      "surah": 25,
+      "ayah": 71,
+      "conf": 1
+    },
+    {
+      "t0": 339,
+      "t1": 344,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 344,
+      "t1": 348,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 348,
+      "t1": 354,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 354,
+      "t1": 360,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 360,
+      "t1": 363.857,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 0.933
+    },
+    {
+      "t0": 363.857,
+      "t1": 382,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 0.704,
+      "partial": true
+    },
+    {
+      "t0": 387,
+      "t1": 393,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.556
+    },
+    {
+      "t0": 393,
+      "t1": 404,
+      "surah": 25,
+      "ayah": 72,
+      "conf": 1
+    },
+    {
+      "t0": 404,
+      "t1": 418,
+      "surah": 25,
+      "ayah": 73,
+      "conf": 1
+    },
+    {
+      "t0": 418,
+      "t1": 436,
+      "surah": 25,
+      "ayah": 74,
+      "conf": 1
+    },
+    {
+      "t0": 436,
+      "t1": 455,
+      "surah": 25,
+      "ayah": 75,
+      "conf": 1
+    },
+    {
+      "t0": 455,
+      "t1": 464,
+      "surah": 25,
+      "ayah": 76,
+      "conf": 1
+    },
+    {
+      "t0": 464,
+      "t1": 481,
+      "surah": 25,
+      "ayah": 77,
+      "conf": 1
+    }
+  ]
+}
