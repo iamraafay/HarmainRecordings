@@ -1,0 +1,135 @@
+{
+  "videoId": "y469UsMbMfU",
+  "generatedAt": "2026-08-15T03:49:04.773Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 1,
+  "segments": [
+    {
+      "t0": 68,
+      "t1": 73,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 74,
+      "t1": 77,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 78,
+      "t1": 82,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 83,
+      "t1": 88,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 89,
+      "t1": 94,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 95,
+      "t1": 112,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 1
+    },
+    {
+      "t0": 122,
+      "t1": 163,
+      "surah": 3,
+      "ayah": 14,
+      "conf": 0.958
+    },
+    {
+      "t0": 164,
+      "t1": 206,
+      "surah": 3,
+      "ayah": 15,
+      "conf": 1
+    },
+    {
+      "t0": 207,
+      "t1": 228,
+      "surah": 3,
+      "ayah": 16,
+      "conf": 1
+    },
+    {
+      "t0": 229,
+      "t1": 249,
+      "surah": 3,
+      "ayah": 17,
+      "conf": 1
+    },
+    {
+      "t0": 336,
+      "t1": 342,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 343,
+      "t1": 346,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 347,
+      "t1": 351,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 352,
+      "t1": 358,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 359,
+      "t1": 365,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 365,
+      "t1": 382,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 1
+    },
+    {
+      "t0": 389,
+      "t1": 415,
+      "surah": 3,
+      "ayah": 18,
+      "conf": 1
+    },
+    {
+      "t0": 416,
+      "t1": 451,
+      "surah": 3,
+      "ayah": 19,
+      "conf": 1
+    }
+  ]
+}
