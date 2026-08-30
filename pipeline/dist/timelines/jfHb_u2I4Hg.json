@@ -1,0 +1,137 @@
+{
+  "videoId": "jfHb_u2I4Hg",
+  "generatedAt": "2026-08-30T09:10:33.934Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 1,
+  "segments": [
+    {
+      "t0": 74,
+      "t1": 78,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 78,
+      "t1": 83,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 83,
+      "t1": 88,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 88,
+      "t1": 95,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 95,
+      "t1": 100,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 100,
+      "t1": 120,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 0.704,
+      "partial": true
+    },
+    {
+      "t0": 126,
+      "t1": 147,
+      "surah": 27,
+      "ayah": 59,
+      "conf": 1
+    },
+    {
+      "t0": 147,
+      "t1": 208,
+      "surah": 27,
+      "ayah": 60,
+      "conf": 1
+    },
+    {
+      "t0": 209,
+      "t1": 244,
+      "surah": 27,
+      "ayah": 61,
+      "conf": 1
+    },
+    {
+      "t0": 245,
+      "t1": 285,
+      "surah": 27,
+      "ayah": 62,
+      "conf": 1
+    },
+    {
+      "t0": 366,
+      "t1": 370,
+      "surah": 1,
+      "ayah": 2,
+      "conf": 1
+    },
+    {
+      "t0": 370,
+      "t1": 372,
+      "surah": 1,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 372,
+      "t1": 376,
+      "surah": 1,
+      "ayah": 4,
+      "conf": 1
+    },
+    {
+      "t0": 376,
+      "t1": 383,
+      "surah": 1,
+      "ayah": 5,
+      "conf": 1
+    },
+    {
+      "t0": 383,
+      "t1": 389,
+      "surah": 1,
+      "ayah": 6,
+      "conf": 1
+    },
+    {
+      "t0": 389,
+      "t1": 408,
+      "surah": 1,
+      "ayah": 7,
+      "conf": 0.704,
+      "partial": true
+    },
+    {
+      "t0": 414,
+      "t1": 451,
+      "surah": 27,
+      "ayah": 63,
+      "conf": 1
+    },
+    {
+      "t0": 451,
+      "t1": 490,
+      "surah": 27,
+      "ayah": 64,
+      "conf": 1
+    }
+  ]
+}
