@@ -1,0 +1,114 @@
+{
+  "videoId": "-uqAQtbzk6M",
+  "generatedAt": "2026-09-05T07:39:03.629Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 0.8,
+  "segments": [
+    {
+      "t0": 104,
+      "t1": 112,
+      "surah": 24,
+      "ayah": 52,
+      "conf": 1
+    },
+    {
+      "t0": 178,
+      "t1": 187,
+      "surah": 35,
+      "ayah": 15,
+      "conf": 0.839
+    },
+    {
+      "t0": 190,
+      "t1": 194,
+      "surah": 51,
+      "ayah": 58,
+      "conf": 1
+    },
+    {
+      "t0": 253,
+      "t1": 259,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.323
+    },
+    {
+      "t0": 287,
+      "t1": 301,
+      "surah": 7,
+      "ayah": 96,
+      "conf": 1
+    },
+    {
+      "t0": 340,
+      "t1": 344,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.429
+    },
+    {
+      "t0": 421,
+      "t1": 431,
+      "surah": 67,
+      "ayah": 15,
+      "conf": 1
+    },
+    {
+      "t0": 515,
+      "t1": 520.368,
+      "surah": 71,
+      "ayah": 10,
+      "conf": 0.893
+    },
+    {
+      "t0": 520.368,
+      "t1": 523.947,
+      "surah": 71,
+      "ayah": 11,
+      "conf": 0.97
+    },
+    {
+      "t0": 523.947,
+      "t1": 532,
+      "surah": 71,
+      "ayah": 12,
+      "conf": 1
+    },
+    {
+      "t0": 540,
+      "t1": 560,
+      "surah": 11,
+      "ayah": 3,
+      "conf": 1
+    },
+    {
+      "t0": 576,
+      "t1": 586,
+      "surah": 40,
+      "ayah": 60,
+      "conf": 1
+    },
+    {
+      "t0": 609,
+      "t1": 616,
+      "surah": 2,
+      "ayah": 201,
+      "conf": 0.829
+    },
+    {
+      "t0": 824,
+      "t1": 830,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.56
+    },
+    {
+      "t0": 1074,
+      "t1": 1084,
+      "surah": 33,
+      "ayah": 56,
+      "conf": 0.874
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "videoId": "C4uYPLXuRho",
+  "generatedAt": "2026-09-05T07:38:40.205Z",
+  "modelVersion": "gemini-3.6-flash",
+  "alignerVersion": "1.0.0",
+  "coverage": 0.5,
+  "segments": [
+    {
+      "t0": 88,
+      "t1": 95,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.475
+    },
+    {
+      "t0": 119,
+      "t1": 121,
+      "surah": 96,
+      "ayah": 1,
+      "conf": 0.68,
+      "partial": true
+    },
+    {
+      "t0": 142,
+      "t1": 146,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.402
+    },
+    {
+      "t0": 439,
+      "t1": 446,
+      "surah": null,
+      "ayah": null,
+      "conf": 0.44
+    },
+    {
+      "t0": 581,
+      "t1": 592,
+      "surah": 17,
+      "ayah": 36,
+      "conf": 0.938
+    },
+    {
+      "t0": 733,
+      "t1": 739,
+      "surah": 16,
+      "ayah": 90,
+      "conf": 0.938
+    }
+  ]
+}
